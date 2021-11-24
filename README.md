@@ -12,5 +12,4 @@ Possible sources of data (EEG):
  * [EEG Motor Movement/Imagery Dataset 1.0.0](https://physionet.org/content/eegmmidb/1.0.0/S032/S032R13.edf)
 
 Possible sources of data (EMG):
- * [sEMG for Basic Hand movements Data Set](https://archive.ics.uci.edu/ml/datasets/sEMG+for+Basic+Hand+movements)
  * [Ninaweb, the web interface of Ninapro, of ProHand and of PaWFE](http://ninapro.hevs.ch/) 
