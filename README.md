@@ -12,4 +12,11 @@ Possible sources of data (EEG):
  * [EEG Motor Movement/Imagery Dataset 1.0.0](https://physionet.org/content/eegmmidb/1.0.0/S032/S032R13.edf)
 
 Possible sources of data (EMG):
- * [Ninaweb, the web interface of Ninapro, of ProHand and of PaWFE](http://ninapro.hevs.ch/) 
+ * [Electromyography (EMG)](https://www.mayoclinic.org/tests-procedures/emg/about/pac-20393913)
+ * [Electromyogram (EMG)](https://archive.physionet.org/mimic2/Signals_Class/emg.shtml)
+ * [Examples of Electromyograms](https://physionet.org/content/emgdb/1.0.0/)
+ * [Dynamic Brain Platform - Official Site](https://dynamicbrain.neuroinf.jp/database/item/id/EMG101)
+ * [another EMG dataset](https://archive.ics.uci.edu/ml/datasets/EMG+Physical+Action+Data+Set)
+ * [Data_Repository.md · biopatrec/biopatrec Wiki](https://github.com/biopatrec/biopatrec/wiki/Data_Repository.md)
+ * [NinaPro data](http://ninapro.hevs.ch/)
+ 
