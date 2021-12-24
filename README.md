@@ -1,9 +1,28 @@
 # Signal Processing + AI project: Bionics
 Project/research about processig signals, used for bionic prosthetics development.
 
-TODO: theoretical intro to EMG, brief intro to prosthetics development.
+## Description:
+Project consists of two parts: processing EMG signals for Signal Processing course and classifying EMG signals by according hand movements for AI course.
 
-## Sources:
+EMG is electromyography, procedure used to obtain myoelectric data. This are recording of signals used by motor neurons to cause muscles to contratc (more information [here](https://www.mayoclinic.org/tests-procedures/emg/about/pac-20393913)).
+
+This signals are frequently used in bionic prosthetics development. More information on myoelectric pattern recognition for bionic upper limb prosthetics [here](https://bionicsforeveryone.com/myoelectric-pattern-recognition-bionic-arms-hands/).
+
+Using EMG we can predict which movement was meant to be performed by the limb, myoelectric data for which was recorded. This is why EMG is used in prosthetics development. In case of my project, I used [dataset 10mov4chForearmUntargeted](https://github.com/biopatrec/biopatrec/wiki/Data_Repository.md), which contained data only for the upper limb and had representations of 10 basic movements.
+
+Here are examples of spectrograms of two signals representing different movements (only one channel for each):
+
+![two spectrograms](images/spectrograms.png)
+
+I used a small signal processing pipeline in order to get the data ready for further work (for example, classification).
+Here is a little preview of raw data and the final processed signal:
+
+![raw signal](images/raw.png)
+![processed signal](images/final.png)
+
+More information about data, processing pipeline, classification and more illustrations are available in the [according jupyter notebook](src/EMG_processing.ipynb). Classification in still under development.
+
+## Sources/literature:
 * **EMG data**
 	1. [Myoelectric Pattern Recognition for Bionic Arms & Hands | Bionics For Everyone](https://bionicsforeveryone.com/myoelectric-pattern-recognition-bionic-arms-hands/)
 	1. [Electromyography (EMG)](https://www.mayoclinic.org/tests-procedures/emg/about/pac-20393913)
@@ -57,4 +76,7 @@ Possible sources of data (EEG):
  * [Brain–computer interface robotics for hand rehabilitation after stroke: a systematic review](https://jneuroengrehab.biomedcentral.com/articles/10.1186/s12984-021-00820-8)
  * [EEG Motor Movement/Imagery Dataset 1.0.0](https://physionet.org/content/eegmmidb/1.0.0/S032/S032R13.edf)
 
- 
+## Credits:
+* [Daria Omelkina](https://github.com/dariaomelkina)
+
+Special Thanks go to [BioPatRec](https://github.com/biopatrec/biopatrec/wiki/BioPatRec.md) team for making EMG data sets available for free access on the web.
