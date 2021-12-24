@@ -47,7 +47,7 @@ TODO: theoretical intro to EMG, brief intro to prosthetics development.
 	1. [InMoov - open-source 3D printed life-size robot](https://inmoov.fr/)
 
 
-## Previouslu viewed
+## Previouslu considered sources:
 Possible sources of data (EEG):
  * [EEG Motor Movement/Imagery Dataset](https://archive.physionet.org/pn4/eegmmidb/)
  * article [EEG datasets for motor imagery brain computer interface](https://www.researchgate.net/publication/316690456_EEG_datasets_for_motor_imagery_brain_computer_interface)
