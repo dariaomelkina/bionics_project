@@ -1,2 +1,5 @@
 sources/
 *.DS_Store
+src/10mov4chForearmUntargeted/
+.ipynb_checkpoints/
+bionics_venv/
