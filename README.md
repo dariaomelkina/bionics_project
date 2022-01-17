@@ -25,10 +25,11 @@ Here is a brief pipeline of both parts of the project:
     1. Removing mean EMG (making average 0 volts)
     1. Rectification (using absolute values of the signal)
     1. Butterworth low-pass filter for envelope
-1. Data analysis:
+1. Data analysis and visualizations:
     1. Aplitude spectrum
     1. Spectrogram
-    1. Visual comaprison of signals for different movements
+    1. Signal processing with visualization
+    1. Visual comparison of signals for different movements
 1. Feature extraction for classification:
     1. Variance per channel
     1. Number of ZCs (Zero crossing) per channel 
