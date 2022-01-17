@@ -1,7 +1,65 @@
 # Signal Processing + AI project: Bionics
 Project/research about processig signals, used for bionic prosthetics development.
 
-## Description:
+Project consists of two parts, presented in the [EMG_processing.ipynb](src/EMG_processing.ipynb):
+* **I Signal Processing: EMG data processing.** concentrated on processing of the raw EMG data.
+* **II AI: Movement classification.** concentrated on classification of EMG signals.
+
+## Problem description:
+The main goal of the project was to learn how to properly process myoelectric signals and use them in the problem of motion classification, which is one of the main tasks in the development of bionic prosthetics. 
+
+The task of EMG processing and motion classification itself is a subtask of a wider field - the development of prosthetics for upper and lower limbs. When using biological signals to control prosthetics, companies and independent developers often choose myoelectric signals: these signals are sent by motor neurons and control muscle contraction. After a limb is amputated, neurons continue to send these signals, and, it is possible to record these signals using EMG sensors and use them to control the prosthesis, which replaced the lost limb.
+
+Therefore, my goal was to process ready myoelectric data and classify it. For classification itself I tried different algorithms to be able to compare them in the end.
+
+## Data:
+I took the data from the BioPatRec repository. Here is a link to descriptions of their datasets: https://github.com/biopatrec/biopatrec/wiki/Data_Repository.md. Here is a link to the exact dataset that I used in the project: https://github.com/biopatrec/biopatrec/tree/Data_Repository/10mov4chForearmUntargeted. This dataset includes EMG recordings of 20 people. For each person, there are 10 movement recordings available. In total in this data set there are representations of ten basic movements: closing and opening of a hand, turns of a hand, firm grip and side grip, thumbs up, etc. Each movement was repeated by each person three times (for a three-second duration) and with breaks for rest between repetitions (also three-second duration ones). Four bipolar electrodes (each with a diameter of 1 cm and a distance between different electrodes of 2 cm) were connected to the person, so the data is available from four channels. The raw data itself has the following dimensions: Number of samples (36,000 in our case) X Number of channels (4 in our case) X Number of types of movements (10 in our case). Signal sampling frequency: 2 kHz, recording time for each type of movement - 18 seconds. Amplifiers were also used in the measurement, signals were preprocessed using the following filters: high-pass fourth-order filter (at 20 Hz), low-pass second-order filter (at 400 Hz), and also Notch filter (50 Hz). For each person, labels are provided in the same order.
+
+## Pipeline:
+Here is a brief pipeline of both parts of the project:
+
+1. Preparations:
+    1. Downloading an EMG dataset
+    1. Reading data from the data set
+1. Processing each signal from the dataset:
+    1. Removing mean EMG (making average 0 volts)
+    1. Rectification (using absolute values of the signal)
+    1. Butterworth low-pass filter for envelope
+1. Data analysis:
+    1. Aplitude spectrum
+    1. Spectrogram
+    1. Visual comaprison of signals for different movements
+1. Feature extraction for classification:
+    1. Variance per channel
+    1. Number of ZCs (Zero crossing) per channel 
+    1. Waveform length per channel
+    1. FFT per channel
+    1. Maximum value per channel
+    1. Mean value per channel
+1. Classification:
+    1. Creating training and testing datasets (k-folds cross-validation)
+    1. Decision Tree training
+    1. SVM training
+    1. KNN training
+    1. Naive Bayes training
+    1. Neural Network training
+    1. Testing models (accuracy, confusion matrix)
+    
+Implementations are more comments and information on each part of the pipeline can be found in [EMG_processing.ipynb](src/EMG_processing.ipynb).
+    
+## Results:
+Here is comparison of final metrics for different results:
+
+
+## Conclusion:
+
+
+## Additionaly: visualizations:
+
+
+
+
+## Brief notes for Signal Processing part:
 Project consists of two parts: processing EMG signals for Signal Processing course and classifying EMG signals by according hand movements for AI course.
 
 EMG is electromyography, procedure used to obtain myoelectric data. This are recording of signals used by motor neurons to cause muscles to contratc (more information [here](https://www.mayoclinic.org/tests-procedures/emg/about/pac-20393913)).
@@ -20,7 +78,7 @@ Here is a little preview of raw data and the final processed signal:
 ![raw signal](images/raw.png)
 ![processed signal](images/final.png)
 
-More information about data, processing pipeline, classification and more illustrations are available in the [according jupyter notebook](src/EMG_processing.ipynb). Classification in still under development.
+More information about data, processing pipeline, classification and more illustrations are available in the [according jupyter notebook](src/EMG_processing.ipynb).
 
 ## Sources/literature:
 * **EMG data**
@@ -34,7 +92,12 @@ More information about data, processing pipeline, classification and more illust
 	1. [Ninapro info/data](http://ninapro.hevs.ch/)
     
 * **Processing EMG with python**
-	1. [Python: Analysing EMG signals ](https://scientificallysound.org/2016/08/11/python-analysing-emg-signals-part-1/) 
+	1. [Python: Analysing EMG signals](https://scientificallysound.org/2016/08/11/python-analysing-emg-signals-part-1/) 
+    
+* **Regarding EMG feature extraction**
+	1. [Interpreting Deep Learning Features for Myoelectric Control: A Comparison With Handcrafted Features](https://pubmed.ncbi.nlm.nih.gov/32195238/)
+	1. [Cardinality as a highly descriptive feature in myoelectric pattern recognition for decoding motor volition](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4625080/)
+	1. [Myoelectric control of prosthetic hands: state-of-the-art review](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4968852/)
     
 * **General info about bionic prosthetics**
 	1. [A Complete Guide to Bionic Arms & Hands | Bionics For Everyone](https://bionicsforeveryone.com/bionic-arms-hands/#bionic-hands-function)
