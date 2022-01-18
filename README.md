@@ -50,7 +50,10 @@ Here is a brief pipeline of both parts of the project:
 Implementations are more comments and information on each part of the pipeline can be found in [EMG_processing.ipynb](src/EMG_processing.ipynb).
     
 ## Results:
-Here is comparison of final metrics for different results.
+Table with final results for accuracy:
+![](images/table.png)
+
+Here is more detailed (with confusion matrix) comparison of final metrics for different results.
 With concatenation:
 
 ![](images/c1.png)
