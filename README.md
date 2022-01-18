@@ -15,6 +15,9 @@ Therefore, my goal was to process ready myoelectric data and classify it. For cl
 ## Data:
 I took the data from the BioPatRec repository. Here is a link to descriptions of their datasets: https://github.com/biopatrec/biopatrec/wiki/Data_Repository.md. Here is a link to the exact dataset that I used in the project: https://github.com/biopatrec/biopatrec/tree/Data_Repository/10mov4chForearmUntargeted. This dataset includes EMG recordings of 20 people. For each person, there are 10 movement recordings available. In total in this data set there are representations of ten basic movements: closing and opening of a hand, turns of a hand, firm grip and side grip, thumbs up, etc. Each movement was repeated by each person three times (for a three-second duration) and with breaks for rest between repetitions (also three-second duration ones). Four bipolar electrodes (each with a diameter of 1 cm and a distance between different electrodes of 2 cm) were connected to the person, so the data is available from four channels. The raw data itself has the following dimensions: Number of samples (36,000 in our case) X Number of channels (4 in our case) X Number of types of movements (10 in our case). Signal sampling frequency: 2 kHz, recording time for each type of movement - 18 seconds. Amplifiers were also used in the measurement, signals were preprocessed using the following filters: high-pass fourth-order filter (at 20 Hz), low-pass second-order filter (at 400 Hz), and also Notch filter (50 Hz). For each person, labels are provided in the same order.
 
+Here is comparison of two processed channels of different signals:
+![](images/comparison.png)
+
 ## Pipeline:
 Here is a brief pipeline of both parts of the project:
 
@@ -47,16 +50,24 @@ Here is a brief pipeline of both parts of the project:
 Implementations are more comments and information on each part of the pipeline can be found in [EMG_processing.ipynb](src/EMG_processing.ipynb).
     
 ## Results:
-Here is comparison of final metrics for different results:
+Here is comparison of final metrics for different results.
+With concatenation:
 
+![](images/c1.png)
+![](images/c2.png)
+
+With handcrafted features:
+
+![](images/f1.png)
+![](images/f2.png)
+
+With separate channels as signals:
+
+![](images/s1.png)
+![](images/s2.png)
 
 ## Conclusion:
-
-
-## Additionaly: visualizations:
-
-
-
+The best results were achived by SVM for concatentaion and Decision Tree for feature extraction, but even they could not achieve good enough metrics. The problem might be in the little amount of data used, incorrect features extracted or flaws in my classification architecture in general.
 
 ## Brief notes for Signal Processing part:
 Project consists of two parts: processing EMG signals for Signal Processing course and classifying EMG signals by according hand movements for AI course.
