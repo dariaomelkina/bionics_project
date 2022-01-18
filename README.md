@@ -33,8 +33,6 @@ Here is a brief pipeline of both parts of the project:
 1. Feature extraction for classification:
     1. Variance per channel
     1. Number of ZCs (Zero crossing) per channel 
-    1. Waveform length per channel
-    1. FFT per channel
     1. Maximum value per channel
     1. Mean value per channel
 1. Classification:
